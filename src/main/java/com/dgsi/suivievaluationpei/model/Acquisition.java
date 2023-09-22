@@ -8,6 +8,10 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
+/**
+ * @author Aichatou
+ * @version 1.0
+ */
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor

@@ -1,0 +1,20 @@
+server:
+    port: 8081
+    error:
+        include-message: always
+        include-binding-errors: always
+spring:
+    datasource:
+        url: jdbc:postgresql://localhost:5432/suivi_evaluation
+        password: admin
+        username: postgres
+    application:
+        name: suivi_evaluation_pei
+    jpa:
+        hibernate:
+            ddl-auto:  create-drop #update
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.PostgreSQLDialect
+                format_sql: true
+        show-sql: true

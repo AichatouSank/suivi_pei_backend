@@ -9,4 +9,5 @@ public interface RegionService {
     List<Region> findAllRegions();
 
     Object updateRegion(Region region);
+     boolean deleteRegion(int id);
 }

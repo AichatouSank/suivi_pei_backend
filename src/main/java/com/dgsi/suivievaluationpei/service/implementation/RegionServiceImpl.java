@@ -28,4 +28,9 @@ public class RegionServiceImpl implements RegionService {
     public Object updateRegion(Region region) {
         return regionRepository.save(region);
     }
+
+    @Override
+    public boolean deleteRegion(int id) {
+        return false;
+    }
 }

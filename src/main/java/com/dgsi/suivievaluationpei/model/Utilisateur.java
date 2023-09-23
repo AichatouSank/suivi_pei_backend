@@ -35,10 +35,13 @@ public class Utilisateur {
     private String nom;
     private String prenom;
     private String nomUtilisateur;
+    @Column(unique = true, nullable = false)
     private String email;
     private String password;
     @OneToOne
+    @JoinColumn(name = "structure_id")
     private Structure structure;
     @OneToOne
+    @JoinColumn(name = "role_id")
     private Role role;
 }

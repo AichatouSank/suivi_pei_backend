@@ -8,5 +8,5 @@ public interface UtilisateurService {
     Utilisateur addUtilisateur(Utilisateur utilisateur);
     List<Utilisateur> findALLUtilisateur();
     Utilisateur updateUtilisateur(Utilisateur utilisateur);
-    void deleteUtilisateurById(Long id);
+    boolean deleteUtilisateurById(Long id);
 }

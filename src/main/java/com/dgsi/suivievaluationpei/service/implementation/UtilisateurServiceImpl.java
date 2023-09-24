@@ -3,6 +3,7 @@ package com.dgsi.suivievaluationpei.service.implementation;
 import com.dgsi.suivievaluationpei.model.Utilisateur;
 import com.dgsi.suivievaluationpei.repository.UtilisateurRepository;
 import com.dgsi.suivievaluationpei.service.UtilisateurService;
+import jdk.jshell.execution.Util;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -30,7 +31,13 @@ public class UtilisateurServiceImpl implements UtilisateurService {
     }
 
     @Override
-    public void deleteUtilisateurById(Long id) {
-         utilisateurRepository.deleteById(id);
+    public boolean deleteUtilisateurById(Long id) {
+       return  false ;
+    }
+    public Utilisateur findByEmail(String email){
+        return  utilisateurRepository.findByEmail(email).orElseThrow();
+    }
+    public Utilisateur findById(Long id){
+        return utilisateurRepository.findByUtilisateurId(id).orElseThrow();
     }
 }

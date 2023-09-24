@@ -39,7 +39,7 @@ public class Utilisateur {
     private String email;
     private String password;
     @OneToOne
-    @JoinColumn(name = "structure_id")
+    @JoinColumn(name = "structure_id", referencedColumnName = "structure_id")
     private Structure structure;
     @OneToOne
     @JoinColumn(name = "role_id",  referencedColumnName = "roleId")

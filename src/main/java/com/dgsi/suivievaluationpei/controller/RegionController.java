@@ -7,6 +7,7 @@ import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.apache.coyote.Response;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,10 +36,11 @@ public class RegionController {
     }
     @GetMapping
     public ResponseEntity<CustomResponse> getAllRegions(){
+        PageRequest pageRequest = PageRequest.of(1,2);
         return ResponseEntity.ok(
                 CustomResponse.builder()
                         .timeStamp(LocalDateTime.now())
-                        .data(Map.of("liste des régions", regionService.findAllRegions()))
+                        .data(Map.of("liste des régions", regionService.findAllRegions(pageRequest)))
                         .message("liste de toutes les régions")
                         .statusCode(OK.value())
                         .status(OK)

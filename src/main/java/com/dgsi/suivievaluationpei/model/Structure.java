@@ -43,8 +43,7 @@ public class Structure {
     private String nomStructure;
     private String libelleLong;
     @ManyToMany(
-        cascade = CascadeType.ALL,
-            mappedBy = "structures"
+        cascade = CascadeType.ALL
     )
     @JoinTable(
             name = "structure_region",

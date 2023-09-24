@@ -4,7 +4,7 @@ import com.dgsi.suivievaluationpei.model.Region;
 import com.dgsi.suivievaluationpei.repository.RegionRepository;
 import com.dgsi.suivievaluationpei.service.RegionService;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,7 +20,7 @@ public class RegionServiceImpl implements RegionService {
     }
 
     @Override
-    public List<Region> findAllRegions() {
+    public List<Region> findAllRegions(PageRequest pageRequest) {
         return regionRepository.findAll();
     }
 

@@ -42,6 +42,6 @@ public class Utilisateur {
     @JoinColumn(name = "structure_id")
     private Structure structure;
     @OneToOne
-    @JoinColumn(name = "role_id")
+    @JoinColumn(name = "role_id",  referencedColumnName = "roleId")
     private Role role;
 }

@@ -3,29 +3,34 @@ package com.dgsi.suivievaluationpei;
 import com.dgsi.suivievaluationpei.model.Region;
 import com.dgsi.suivievaluationpei.model.Structure;
 import com.dgsi.suivievaluationpei.model.typeEquipement.Ordinateur;
+import com.dgsi.suivievaluationpei.repository.RegionRepository;
 import com.dgsi.suivievaluationpei.repository.StructutureRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
+@AllArgsConstructor
 @SpringBootApplication
 public class SuiviEvaluationPeiApplication 	implements CommandLineRunner {
-	@Autowired
-	public SuiviEvaluationPeiApplication(StructutureRepository structutureRepository) {
-		this.structutureRepository = structutureRepository;
-	}
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(SuiviEvaluationPeiApplication.class, args);
 	}
 public final StructutureRepository structutureRepository;
+	private final RegionRepository regionRepository;
 
 	@Override
 	public void run(String... args) throws Exception {
+		Region region2 = new Region(1,"centre", new ArrayList<>());
+
+		regionRepository.save(region2);
+
 		/*Region region1 = new Region("centre");
 		Region region2 = new Region("cascades");
 		Region region3 = new Region("sahel");

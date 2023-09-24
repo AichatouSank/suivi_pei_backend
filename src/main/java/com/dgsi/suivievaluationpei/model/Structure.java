@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -36,22 +37,30 @@ public class Structure {
             strategy = GenerationType.SEQUENCE,
             generator = "structure_generator"
     )
-    @Column(name = "structure_id")
-    private Integer strutureId;
+    @Column(
+            name = "structure_id"
+
+    )
+    private int strutureId;
     @NotNull
     @Column(nullable = false, unique = true)
     private String nomStructure;
     private String libelleLong;
+    //relations
     @ManyToMany(
-        cascade = CascadeType.ALL
+        cascade = CascadeType.ALL,
+            fetch = FetchType.EAGER
     )
     @JoinTable(
-            name = "structure_region",
+            name = "structures_regions",
             joinColumns = @JoinColumn(name = "structure_id"),
             inverseJoinColumns = @JoinColumn(name = "region_id")
 
     )
-    //@JoinColumn(name = "fk_structures_id", referencedColumnName = "structure_id")
-    private List<Region> regions;
+    private List<Region> regions = new ArrayList<>();
+    @OneToMany(
+            mappedBy = "structure"
+    )
+    private List<StructureEquipement>structureEquipements = new ArrayList<>();
 
 }

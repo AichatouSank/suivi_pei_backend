@@ -6,12 +6,14 @@ import com.dgsi.suivievaluationpei.service.RoleService;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@Service
 public class RoleServiceImpl implements RoleService {
     private RoleRepository roleRepository;
     @Override

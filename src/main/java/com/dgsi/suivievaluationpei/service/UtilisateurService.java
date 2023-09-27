@@ -9,4 +9,5 @@ public interface UtilisateurService {
     List<Utilisateur> findALLUtilisateur();
     Utilisateur updateUtilisateur(Utilisateur utilisateur);
     boolean deleteUtilisateurById(Long id);
+    Utilisateur findUtilisateurById(Long id);
 }

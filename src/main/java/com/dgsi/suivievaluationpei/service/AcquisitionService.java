@@ -1,7 +1,7 @@
 package com.dgsi.suivievaluationpei.service;
 
-import com.dgsi.suivievaluationpei.enumeration.ModeAcquisition;
 import com.dgsi.suivievaluationpei.model.Acquisition;
+import com.dgsi.suivievaluationpei.model.ModeAcquisition;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

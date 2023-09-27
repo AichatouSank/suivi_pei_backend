@@ -1,7 +1,7 @@
 package com.dgsi.suivievaluationpei.controller;
 
-import com.dgsi.suivievaluationpei.enumeration.ModeAcquisition;
 import com.dgsi.suivievaluationpei.model.Acquisition;
+import com.dgsi.suivievaluationpei.model.ModeAcquisition;
 import com.dgsi.suivievaluationpei.response.CustomResponse;
 import com.dgsi.suivievaluationpei.service.AcquisitionService;
 import com.dgsi.suivievaluationpei.service.implementation.AcquisitionServiceImpl;

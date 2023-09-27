@@ -28,9 +28,9 @@ public class Region {
     private Integer regionId;
     @Column(unique = true, nullable = false)
     private String nomRegion;
-    @ManyToMany(
+  /*  @ManyToMany(
             mappedBy = "regions"
     )
-    private List<Structure> structure;
+    private List<Structure> structure;*/
 
 }

@@ -1,7 +1,7 @@
 package com.dgsi.suivievaluationpei.service.implementation;
 
-import com.dgsi.suivievaluationpei.enumeration.ModeAcquisition;
 import com.dgsi.suivievaluationpei.model.Acquisition;
+import com.dgsi.suivievaluationpei.model.ModeAcquisition;
 import com.dgsi.suivievaluationpei.repository.AcquisitionRepository;
 import com.dgsi.suivievaluationpei.service.AcquisitionService;
 import lombok.AllArgsConstructor;

@@ -16,7 +16,8 @@ public class UtilisateurServiceImpl implements UtilisateurService {
     private final UtilisateurRepository utilisateurRepository;
     @Override
     public Utilisateur addUtilisateur(Utilisateur utilisateur) {
-
+    String nomUtilisateur = utilisateur.getNom() + utilisateur.getPrenom();
+    utilisateur.setNomUtilisateur(nomUtilisateur);
         return utilisateurRepository.save(utilisateur);
     }
 
@@ -34,6 +35,12 @@ public class UtilisateurServiceImpl implements UtilisateurService {
     public boolean deleteUtilisateurById(Long id) {
        return  false ;
     }
+
+    @Override
+    public Utilisateur findUtilisateurById(Long id) {
+        return utilisateurRepository.findByUtilisateurId(id).orElseThrow();
+    }
+
     public Utilisateur findByEmail(String email){
         return  utilisateurRepository.findByEmail(email).orElseThrow();
     }

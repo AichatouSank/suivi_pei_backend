@@ -11,6 +11,7 @@ public interface PrevisionService {
     List<Prevision> getAllPrevision();
     Prevision updatePrevision(Prevision prevision);
     String deletePrevision(Long id);
-    Optional<Prevision>findByAnneeBudgetaire(LocalDateTime annee);
+    Optional<Prevision>findByAnneeBudgetaire(int annee);
 
+    List<Prevision> findByStructure(String structure);
 }

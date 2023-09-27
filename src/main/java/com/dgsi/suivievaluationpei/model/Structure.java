@@ -53,14 +53,14 @@ public class Structure {
     )
     @JoinTable(
             name = "structures_regions",
-            joinColumns = @JoinColumn(name = "structure_id"),
-            inverseJoinColumns = @JoinColumn(name = "region_id")
+            joinColumns = @JoinColumn(name = "region_id")
+            //inverseJoinColumns = @JoinColumn(name = "region_id")
 
     )
     private List<Region> regions = new ArrayList<>();
-    @OneToMany(
+  /*  @OneToMany(
             mappedBy = "structure"
     )
-    private List<StructureEquipement>structureEquipements = new ArrayList<>();
+    private List<Prevision>previsions = new ArrayList<>();*/
 
 }

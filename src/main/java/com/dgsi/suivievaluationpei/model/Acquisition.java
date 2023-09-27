@@ -1,6 +1,5 @@
 package com.dgsi.suivievaluationpei.model;
 
-import com.dgsi.suivievaluationpei.enumeration.ModeAcquisition;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -30,5 +29,17 @@ public class Acquisition {
     )
     private Long acquisitionId;
     private LocalDateTime dateAcquisition;
+    private int quantite;
+    private double coutReel;
+    private double coutTotal;
+    //relations
+    @ManyToOne
+    @JoinColumn(name = "structure_id", referencedColumnName = "structure_id")
+    private Structure structure;
+    @ManyToOne
+    @JoinColumn(name = "equipement_id", referencedColumnName = "equipementId")
+    private EquipementInformatique equipementInformatique;
+    @OneToOne
+    @JoinColumn(name = "mode_acquisition_id", referencedColumnName = "id")
     private ModeAcquisition modeAcquisition;
 }

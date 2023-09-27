@@ -17,7 +17,7 @@ import static org.springframework.http.HttpStatus.OK;
 @RestController
 @AllArgsConstructor
 @CrossOrigin
-@RequestMapping("/api/v/utilisateurs")
+@RequestMapping("/api/v1/utilisateurs")
 public class UtilisateurController {
     private UtilisateurService utilisateurService;
 

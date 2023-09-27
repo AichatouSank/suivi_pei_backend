@@ -5,24 +5,23 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-
 @Entity
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 @Table(name = "previsions")
 public class Prevision {
     @Id
-    @SequenceGenerator(
-            name = "prevision_generator",
-            sequenceName = "prevision_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "prevision_generator"
-    )
-    private Long PrevisionId;
-    private LocalDateTime anneeBudgetaire;
+    private Long id;
+    private int anneeBudgetaire;
+    private int quantite;
+    private double prixTotal;
+    @ManyToOne
+    @JoinColumn(name = "structure_id",   insertable = false,
+            updatable = false)
+
+    private Structure structure;
+    @ManyToOne
+    @JoinColumn(name = "equipement_id")
+    private EquipementInformatique equipementInformatique;
 }

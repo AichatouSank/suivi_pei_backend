@@ -29,5 +29,5 @@ public abstract class EquipementInformatique {
     @OneToMany(
             mappedBy = "equipementInformatique"
     )
-    private List<StructureEquipement> structureEquipements = new ArrayList<>();
+    private List<Prevision> previsions = new ArrayList<>();
 }

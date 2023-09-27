@@ -35,7 +35,12 @@ public class PrevisionServiceImpl implements PrevisionService {
     }
 
     @Override
-    public Optional<Prevision> findByAnneeBudgetaire(LocalDateTime annee) {
+    public Optional<Prevision> findByAnneeBudgetaire(int annee) {
         return Optional.empty();
+    }
+
+    @Override
+    public List<Prevision> findByStructure(String structure) {
+        return null;
     }
 }

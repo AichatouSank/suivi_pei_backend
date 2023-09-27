@@ -16,6 +16,8 @@ public class RegionServiceImpl implements RegionService {
 
     @Override
     public Region addRegion(Region region) {
+        String nomUpperCase = region.getNomRegion().toUpperCase();
+        region.setNomRegion(nomUpperCase);
         return regionRepository.save(region);
     }
 

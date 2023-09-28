@@ -1,5 +1,6 @@
 package com.dgsi.suivievaluationpei.service;
 
+import com.dgsi.suivievaluationpei.model.Role;
 import com.dgsi.suivievaluationpei.model.Utilisateur;
 
 import java.util.List;

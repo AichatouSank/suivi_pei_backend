@@ -3,12 +3,15 @@ package com.dgsi.suivievaluationpei.controller;
 import com.dgsi.suivievaluationpei.model.Structure;
 import com.dgsi.suivievaluationpei.response.CustomResponse;
 import com.dgsi.suivievaluationpei.service.StructureService;
+import com.dgsi.suivievaluationpei.service.implementation.StructureServiceImpl;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Map;
 
 import static org.springframework.http.HttpStatus.CREATED;
@@ -35,10 +38,10 @@ public class StructureController {
     }
     @GetMapping
     public ResponseEntity<CustomResponse> getAllStructures(){
-        return ResponseEntity.ok(
+      return ResponseEntity.ok(
                 CustomResponse.builder()
                         .timeStamp(LocalDateTime.now())
-                        .data(Map.of())
+                        .data(Map.of("structures: ",  structureService.findAllStructures()))
                         .message("Liste de toutes les structures")
                         .status(OK)
                         .statusCode(OK.value())

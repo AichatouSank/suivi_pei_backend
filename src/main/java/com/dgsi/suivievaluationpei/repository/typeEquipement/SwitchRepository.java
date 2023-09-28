@@ -1,8 +1,7 @@
 package com.dgsi.suivievaluationpei.repository.typeEquipement;
 
-import com.dgsi.suivievaluationpei.repository.EquipementInformatiqueRepository;
-import org.springframework.stereotype.Repository;
+import com.dgsi.suivievaluationpei.model.typeEquipement.Switch;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@Repository
-public interface SwitchRepository extends EquipementInformatiqueRepository {
+public interface SwitchRepository extends JpaRepository<Switch, Long> {
 }

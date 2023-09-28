@@ -1,8 +1,8 @@
 package com.dgsi.suivievaluationpei.repository.typeEquipement;
 
-import com.dgsi.suivievaluationpei.repository.EquipementInformatiqueRepository;
+import com.dgsi.suivievaluationpei.model.typeEquipement.PareFeu;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository
-public interface PareFeuRepository extends EquipementInformatiqueRepository {
+public interface PareFeuRepository extends JpaRepository<PareFeu, Long> {
 }

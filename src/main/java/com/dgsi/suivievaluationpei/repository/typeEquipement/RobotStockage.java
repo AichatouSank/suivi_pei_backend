@@ -1,8 +1,6 @@
 package com.dgsi.suivievaluationpei.repository.typeEquipement;
 
-import com.dgsi.suivievaluationpei.repository.EquipementInformatiqueRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@Repository
-public interface RobotStockage extends EquipementInformatiqueRepository {
+public interface RobotStockage extends JpaRepository<RobotStockage, Long> {
 }

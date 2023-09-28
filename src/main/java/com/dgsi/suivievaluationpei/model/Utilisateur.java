@@ -44,4 +44,6 @@ public class Utilisateur {
     @OneToOne
     @JoinColumn(name = "role_id",  referencedColumnName = "roleId")
     private Role role;
+
+
 }

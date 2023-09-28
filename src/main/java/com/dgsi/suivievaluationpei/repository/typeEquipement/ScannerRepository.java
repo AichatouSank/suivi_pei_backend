@@ -1,8 +1,7 @@
 package com.dgsi.suivievaluationpei.repository.typeEquipement;
 
-import com.dgsi.suivievaluationpei.repository.EquipementInformatiqueRepository;
-import org.springframework.stereotype.Repository;
+import com.dgsi.suivievaluationpei.model.typeEquipement.Scanner;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@Repository
-public interface ScannerRepository extends EquipementInformatiqueRepository {
+public interface ScannerRepository extends JpaRepository<Scanner, Long> {
 }

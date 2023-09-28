@@ -1,8 +1,7 @@
 package com.dgsi.suivievaluationpei.repository.typeEquipement;
 
-import com.dgsi.suivievaluationpei.repository.EquipementInformatiqueRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@Repository
-public interface RegulateurTension extends EquipementInformatiqueRepository {
+
+public interface RegulateurTension extends JpaRepository<RegulateurTension, Long> {
 }

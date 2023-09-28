@@ -32,8 +32,11 @@ public class Role {
     @Column(unique = true , length = 25, nullable = false)
     private String roleName;
 
+/*
     @OneToOne(
             mappedBy = "role"
     )
     private Utilisateur utilisateur;
+*/
+
 }

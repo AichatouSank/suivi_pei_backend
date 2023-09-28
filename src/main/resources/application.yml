@@ -12,7 +12,7 @@ spring:
         name: suivi_evaluation_pei
     jpa:
         hibernate:
-            ddl-auto:  create-drop #update
+            ddl-auto:  create-drop
         properties:
             hibernate:
                 dialect: org.hibernate.dialect.PostgreSQLDialect

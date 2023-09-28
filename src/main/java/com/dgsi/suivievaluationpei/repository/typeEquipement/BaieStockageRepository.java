@@ -1,8 +1,7 @@
 package com.dgsi.suivievaluationpei.repository.typeEquipement;
 
-import com.dgsi.suivievaluationpei.repository.EquipementInformatiqueRepository;
-import org.springframework.stereotype.Repository;
+import com.dgsi.suivievaluationpei.model.typeEquipement.BaieStockage;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@Repository
-public interface BaieStockageRepository extends EquipementInformatiqueRepository {
+public interface BaieStockageRepository extends JpaRepository<BaieStockage, Long> {
 }

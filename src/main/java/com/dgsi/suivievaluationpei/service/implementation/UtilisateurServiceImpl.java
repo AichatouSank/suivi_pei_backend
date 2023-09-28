@@ -1,6 +1,8 @@
 package com.dgsi.suivievaluationpei.service.implementation;
 
+import com.dgsi.suivievaluationpei.model.Role;
 import com.dgsi.suivievaluationpei.model.Utilisateur;
+import com.dgsi.suivievaluationpei.repository.RoleRepository;
 import com.dgsi.suivievaluationpei.repository.UtilisateurRepository;
 import com.dgsi.suivievaluationpei.service.UtilisateurService;
 import jdk.jshell.execution.Util;
@@ -14,6 +16,7 @@ import java.util.List;
 
 public class UtilisateurServiceImpl implements UtilisateurService {
     private final UtilisateurRepository utilisateurRepository;
+    private final RoleRepository roleRepository;
     @Override
     public Utilisateur addUtilisateur(Utilisateur utilisateur) {
     String nomUtilisateur = utilisateur.getNom() + utilisateur.getPrenom();

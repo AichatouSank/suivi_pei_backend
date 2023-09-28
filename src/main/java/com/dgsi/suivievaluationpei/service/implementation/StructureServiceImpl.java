@@ -1,11 +1,14 @@
 package com.dgsi.suivievaluationpei.service.implementation;
 
+import com.dgsi.suivievaluationpei.model.Region;
 import com.dgsi.suivievaluationpei.model.Structure;
 import com.dgsi.suivievaluationpei.repository.StructutureRepository;
 import com.dgsi.suivievaluationpei.service.StructureService;
 import com.sun.jdi.event.StepEvent;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @AllArgsConstructor
@@ -19,8 +22,8 @@ public class StructureServiceImpl implements StructureService {
     }
 
     @Override
-    public Structure findAllStructures() {
-        return null;
+    public List<Structure> findAllStructures() {
+        return structutureRepository.findAll();
     }
 
     @Override

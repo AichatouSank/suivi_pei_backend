@@ -11,11 +11,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @AllArgsConstructor
-@NoArgsConstructor
 @Data
 @Service
 public class RoleServiceImpl implements RoleService {
-    private RoleRepository roleRepository;
+    private final RoleRepository roleRepository;
     @Override
     public Role addRole(Role role) {
         return roleRepository.save(role);
@@ -23,12 +22,12 @@ public class RoleServiceImpl implements RoleService {
 
     @Override
     public List<Role> findAllRoles() {
-        return null;
+        return roleRepository.findAll();
     }
 
     @Override
     public Role updateRole(Role role) {
-        return null;
+        return roleRepository.save(role);
     }
 
     @Override

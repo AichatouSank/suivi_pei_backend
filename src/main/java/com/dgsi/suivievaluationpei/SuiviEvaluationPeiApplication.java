@@ -1,15 +1,9 @@
 package com.dgsi.suivievaluationpei;
 
-import com.dgsi.suivievaluationpei.model.EquipementInformatique;
-import com.dgsi.suivievaluationpei.model.Prevision;
-import com.dgsi.suivievaluationpei.model.Region;
-import com.dgsi.suivievaluationpei.model.Structure;
+import com.dgsi.suivievaluationpei.model.*;
 import com.dgsi.suivievaluationpei.model.typeEquipement.DisqueDur;
 import com.dgsi.suivievaluationpei.model.typeEquipement.Ordinateur;
-import com.dgsi.suivievaluationpei.repository.EquipementInformatiqueRepository;
-import com.dgsi.suivievaluationpei.repository.PrevisionRepository;
-import com.dgsi.suivievaluationpei.repository.RegionRepository;
-import com.dgsi.suivievaluationpei.repository.StructutureRepository;
+import com.dgsi.suivievaluationpei.repository.*;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -31,33 +25,36 @@ public final StructutureRepository structutureRepository;
 	private final RegionRepository regionRepository;
 	private final EquipementInformatiqueRepository equipementInformatiqueRepository;
 	private final PrevisionRepository previsionRepository;
-
+	private final RoleRepository roleRepository;
+	private final UtilisateurRepository utilisateurRepository;
 	@Override
 	public void run(String... args) throws Exception {
-		Region region2 = new Region(1,"centre");
+		Role role =  new Role(1,"admin");
+		roleRepository.save(role);
 
-		regionRepository.save(region2);
-		Ordinateur ordi;
-		Prevision prevision = new Prevision(
-		);
-		Structure structure = new Structure(1, "DRH", "",new ArrayList<>(1));
-		structutureRepository.save(structure);
-		/*Region region1 = new Region("centre");
-		Region region2 = new Region("cascades");
-		Region region3 = new Region("sahel");
-		Region region4 = new Region("fada");
-		Region region5 = new Region("comoe");
+
+		Region region1 = new Region(1,"centre");
+		Region region2 = new Region(2,"cascades");
+		Region region3 = new Region(3,"sahel");
+		Region region4 = new Region(4,"fada");
+		Region region5 = new Region(5,"comoe");
+
 
 		List<Region> regions = Arrays.asList(region1,region2,region3);
-		Structure structure = new Structure("DRH", regions);
+		Structure structure = new Structure(5,"dgi", "direction bla bla", regions);
+		structutureRepository.save(structure);
 
-		List<Region> region = Arrays.asList(region1,region2);
-		Structure structure2 = new Structure("DGSI", region);
+		List<Region> region = List.of(region1,region2);
+		Structure structure2 = new Structure(5,"dgd", "direction...", region);
 		structutureRepository.save(structure2);
 
+		List<Region> regio = List.of(region1);
+		Structure structure4 = new Structure(8,"author", "direction... one", regio);
+		structutureRepository.save(structure4);
+
 		List<Region> regionAuther = Arrays.asList(region1,region2,region3, region4, region5);
-		Structure structure3 = new Structure("AJE", regionAuther);
-		structutureRepository.save(structure3);*/
+		Structure structure3 = new Structure(7,"AJE","another", regionAuther);
+		structutureRepository.save(structure3);
 		Ordinateur ordinateur = new Ordinateur();
 		ordinateur.setLibelle("ordinateur");
 		ordinateur.setProcesseur("core i3");
@@ -85,7 +82,6 @@ public final StructutureRepository structutureRepository;
 		disque.setLibelle("disque dur");
 		disque.setModele("HP");
 		equipementInformatiqueRepository.save(disque);
-
 	}
 }
 

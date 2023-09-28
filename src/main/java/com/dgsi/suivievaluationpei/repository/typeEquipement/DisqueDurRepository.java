@@ -1,8 +1,8 @@
 package com.dgsi.suivievaluationpei.repository.typeEquipement;
 
-import com.dgsi.suivievaluationpei.repository.EquipementInformatiqueRepository;
-import org.springframework.stereotype.Repository;
+import com.dgsi.suivievaluationpei.model.typeEquipement.DisqueDur;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@Repository
-public interface DisqueDurRepository extends EquipementInformatiqueRepository {
+
+public interface DisqueDurRepository extends JpaRepository<DisqueDur, Long> {
 }

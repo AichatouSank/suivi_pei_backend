@@ -1,8 +1,8 @@
 package com.dgsi.suivievaluationpei.repository.typeEquipement;
 
-import com.dgsi.suivievaluationpei.repository.EquipementInformatiqueRepository;
+import com.dgsi.suivievaluationpei.model.typeEquipement.Photocopieuse;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository
-public interface PhotocopieuseRepository extends EquipementInformatiqueRepository {
+public interface PhotocopieuseRepository extends JpaRepository<Photocopieuse, Long> {
 }

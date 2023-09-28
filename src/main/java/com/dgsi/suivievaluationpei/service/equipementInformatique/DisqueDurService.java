@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface DisqueDurService {
     DisqueDur addDisqueDur(DisqueDur disqueDur);
-    List<EquipementInformatique> getAllDisqueDur();
+    List<DisqueDur> getAllDisqueDur();
     DisqueDur updateDisqueDur(DisqueDur disqueDur);
-    String deleteDisqueDur(Long id);
+    boolean deleteDisqueDur(Long id);
 }

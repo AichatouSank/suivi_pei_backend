@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface PhotocopieuseService {
     Photocopieuse addPhotocopieuse(Photocopieuse photocopieuse);
-    List<EquipementInformatique> getAllPhotocopieuse();
+    List<Photocopieuse> getAllPhotocopieuse();
     Photocopieuse updatePhotocopieuse(Photocopieuse photocopieuse);
-    String deletePhotocopieuse(Long id);
+    boolean deletePhotocopieuse(Long id);
 }

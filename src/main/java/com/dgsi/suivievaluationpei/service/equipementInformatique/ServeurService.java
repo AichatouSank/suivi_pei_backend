@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface ServeurService {
     Serveur addServeur(Serveur serveur);
-    List<EquipementInformatique> getAllServeur();
+    List<Serveur> getAllServeur();
     Serveur updateServeur(Serveur serveur);
-    String deleteServeur(Long id);
+    boolean deleteServeur(Long id);
 }

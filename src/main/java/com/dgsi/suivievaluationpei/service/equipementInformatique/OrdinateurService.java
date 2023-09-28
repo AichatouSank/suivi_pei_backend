@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface OrdinateurService {
     Ordinateur addOrdinateur(Ordinateur ordinateur);
-    List<EquipementInformatique> getAllOrdinateur();
+    List<Ordinateur> getAllOrdinateur();
     Ordinateur updateOrdinateur(Ordinateur ordinateur);
-    String deleteOrdinateur(Long id);
+    boolean deleteOrdinateur(Long id);
 }

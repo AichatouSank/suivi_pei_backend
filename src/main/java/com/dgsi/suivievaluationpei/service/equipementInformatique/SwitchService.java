@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface SwitchService {
     Switch addSwitch(Switch cleUSB);
-    List<EquipementInformatique> getAllSwitch();
+    List<Switch> getAllSwitch();
     Switch updateSwitch(Switch cleUSB);
-    String deleteSwitch(Long id);
+    boolean deleteSwitch(Long id);
 }

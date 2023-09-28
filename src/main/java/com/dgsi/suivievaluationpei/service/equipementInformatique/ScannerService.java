@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface ScannerService {
     Scanner addScanner(Scanner scanner);
-    List<EquipementInformatique> getAllScanner();
+    List<java.util.Scanner> getAllScanner();
     Scanner updateScanner(Scanner scanner);
-    String deleteScanner(Long id);
+    boolean deleteScanner(Long id);
 }

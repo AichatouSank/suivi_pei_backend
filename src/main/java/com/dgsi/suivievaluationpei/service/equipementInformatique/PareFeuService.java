@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface PareFeuService {
     PareFeu addPareFeu(PareFeu pareFeu);
-    List<EquipementInformatique> getAllPareFeu();
+    List<PareFeu> getAllPareFeu();
     PareFeu updatePareFeu(PareFeu pareFeu);
-    String deletePareFeu(Long id);
+    boolean deletePareFeu(Long id);
 }

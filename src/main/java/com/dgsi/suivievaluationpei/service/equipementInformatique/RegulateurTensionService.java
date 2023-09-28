@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface RegulateurTensionService {
     RegulateurTension addRegulateurTension(RegulateurTension regulateurTension);
-    List<EquipementInformatique> getAllRegulateurTension();
+    List<RegulateurTension> getAllRegulateurTension();
     RegulateurTension updateRegulateurTension(RegulateurTension regulateurTension);
-    String deleteRegulateurTension(Long id);
+    boolean deleteRegulateurTension(Long id);
 }

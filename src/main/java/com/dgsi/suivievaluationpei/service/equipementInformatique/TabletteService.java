@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface TabletteService {
     Tablette addTablette(Tablette tablette);
-    List<EquipementInformatique> getAllTablette();
+    List<Tablette> getAllTablette();
     Tablette updateTablette(Tablette tablette);
-    String deleteTablette(Long id);
+    boolean deleteTablette(Long id);
 }

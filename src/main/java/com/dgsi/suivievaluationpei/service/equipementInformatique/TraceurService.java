@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface TraceurService {
     Traceur addTraceur(Traceur cleUSB);
-    List<EquipementInformatique> getAllTraceur();
+    List<Traceur> getAllTraceur();
     Traceur updateTraceur(Traceur cleUSB);
-    String deleteTraceur(Long id);
+    boolean deleteTraceur(Long id);
 }

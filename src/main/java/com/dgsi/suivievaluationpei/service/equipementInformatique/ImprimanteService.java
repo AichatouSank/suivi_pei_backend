@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface ImprimanteService {
     Imprimante addImprimante(Imprimante imprimante);
-    List<EquipementInformatique> getAllImprimante();
+    List<Imprimante> getAllImprimante();
     Imprimante updateImprimante(Imprimante imprimante);
-    String deleteImprimante(Long id);
+    boolean deleteImprimante(Long id);
 }

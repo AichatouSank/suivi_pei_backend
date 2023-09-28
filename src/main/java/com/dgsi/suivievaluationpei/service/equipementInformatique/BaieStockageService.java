@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface BaieStockageService {
     BaieStockage addBaie(BaieStockage baieStockage);
-    List<EquipementInformatique> getAllBaieStockage();
+    List<BaieStockage> getAllBaieStockage();
     BaieStockage updateBaieStockage(BaieStockage baieStockage);
-    String deleteBaieStockage(Long id);
+    boolean deleteBaieStockage(Long id);
 }

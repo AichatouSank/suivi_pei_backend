@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface RouteurService {
     Routeur addRouteur(Routeur routeur);
-    List<EquipementInformatique> getAllRouteur();
+    List<Routeur> getAllRouteur();
     Routeur updateRouteur(Routeur routeur);
-    String deleteRouteur(Long id);
+    boolean deleteRouteur(Long id);
 }

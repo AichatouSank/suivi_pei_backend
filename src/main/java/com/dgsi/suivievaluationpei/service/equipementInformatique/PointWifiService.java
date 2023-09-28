@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface PointWifiService {
     PointWifi addPointWifi(PointWifi pointWifi);
-    List<EquipementInformatique> getAllPointWifi();
+    List<PointWifi> getAllPointWifi();
     PointWifi updatePointWifi(PointWifi pointWifi);
-    String deletePointWifi(Long id);
+    boolean deletePointWifi(Long id);
 }

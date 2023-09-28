@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface OnduleurService {
     Onduleur addOnduleur(Onduleur onduleur);
-    List<EquipementInformatique> getAllOnduleur();
+    List<Onduleur> getAllOnduleur();
     Onduleur updateOnduleur(Onduleur onduleur);
-    String deleteOnduleur(Long id);
+    boolean deleteOnduleur(Long id);
 }

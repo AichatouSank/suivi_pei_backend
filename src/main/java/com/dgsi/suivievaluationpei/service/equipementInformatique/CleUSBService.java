@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface CleUSBService{
     CleUSB addCleUSB(CleUSB cleUSB);
-    List<EquipementInformatique> getAllCleUSB();
+    List<CleUSB> getAllCleUSB();
     CleUSB updateCleUSB(CleUSB cleUSB);
-    String deleteCleUSB(Long id);
+    boolean deleteCleUSB(Long id);
 }

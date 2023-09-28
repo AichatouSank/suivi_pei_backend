@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface RobotSauvegardeService {
     RobotSauvegarde addRobotSauvegarde(RobotSauvegarde robotSauvegarde);
-    List<EquipementInformatique> getAllRobotSauvegarde();
+    List<RobotSauvegarde> getAllRobotSauvegarde();
     RobotSauvegarde updateRobotSauvegarde(RobotSauvegarde robotSauvegarde);
-    String deleteRobotSauvegarde(Long id);
+    boolean deleteRobotSauvegarde(Long id);
 }

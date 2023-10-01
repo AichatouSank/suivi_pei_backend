@@ -43,7 +43,7 @@ public class Structure {
     )
     private int strutureId;
     @NotNull
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false, unique = true, length = 15)
     private String nomStructure;
     private String libelleLong;
     //relations

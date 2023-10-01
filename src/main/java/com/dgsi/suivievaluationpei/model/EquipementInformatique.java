@@ -8,6 +8,7 @@ import java.util.List;
 
 @Data
 @Entity
+@Table(name = "equipements")
 //@MappedSuperclass
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class EquipementInformatique {
@@ -22,12 +23,15 @@ public abstract class EquipementInformatique {
             generator = "equipement_generator"
     )
     private Long equipementId;
+    @Column(nullable = false, length = 50)
     private String marque;
+    @Column(nullable = false, length = 50)
     private String libelle;
     private String modele;
+    @Column(nullable = false)
     private Double cout;
-    @OneToMany(
+    /*@OneToMany(
             mappedBy = "equipementInformatique"
     )
-    private List<Prevision> previsions = new ArrayList<>();
+    private List<Prevision> previsions = new ArrayList<>();*/
 }

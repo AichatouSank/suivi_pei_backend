@@ -26,7 +26,7 @@ public class Region {
     )
     @Column(name = "region_id")
     private Integer regionId;
-    @Column(unique = true, nullable = false)
+    @Column(unique = true, nullable = false, length = 25)
     private String nomRegion;
   /*  @ManyToMany(
             mappedBy = "regions"

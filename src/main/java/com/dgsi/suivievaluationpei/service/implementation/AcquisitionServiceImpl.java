@@ -24,7 +24,8 @@ public class AcquisitionServiceImpl implements AcquisitionService {
     private final AcquisitionRepository acquisitionRepository;
     @Override
     public Acquisition addAcquisition(Acquisition acquisition) {
-
+        Double coutTotal = acquisition.getCoutReel() *  acquisition.getQuantite();
+        acquisition.setCoutTotal(coutTotal);
         return acquisitionRepository.save(acquisition);
     }
 

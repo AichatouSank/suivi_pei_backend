@@ -12,7 +12,7 @@ public interface AcquisitionRepository extends JpaRepository<Acquisition, Long> 
     Optional<Acquisition> findByDateAcquisition(LocalDateTime date);
     Optional<Acquisition> findByModeAcquisition(ModeAcquisition modeAcquisition);
     Optional<Acquisition> findByDateAcquisitionAndModeAcquisition(LocalDateTime date, ModeAcquisition modeAcquisition);
-    double coutTotal();
+    //double coutTotal();
 
 
 }

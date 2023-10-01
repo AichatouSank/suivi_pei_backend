@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface StructureService {
     Structure addStructure(Structure structure);
-    List<Structure> findAllStructures(Sort sort);
+    List<Structure> findAllStructures();
     Structure updateStructure(Structure structure);
     Structure deleteStructure(int id);
 }

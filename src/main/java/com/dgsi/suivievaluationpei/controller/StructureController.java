@@ -38,11 +38,11 @@ public class StructureController {
         );
     }
     @GetMapping
-    public ResponseEntity<CustomResponse> getAllStructures(Sort sort){
+    public ResponseEntity<CustomResponse> getAllStructures(){
       return ResponseEntity.ok(
                 CustomResponse.builder()
                         .timeStamp(LocalDateTime.now())
-                        .data(Map.of("structures: ",  structureService.findAllStructures(sort)))
+                        .data(Map.of("structures: ",  structureService.findAllStructures()))
                         .message("Liste de toutes les structures")
                         .status(OK)
                         .statusCode(OK.value())

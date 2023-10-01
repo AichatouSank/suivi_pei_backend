@@ -23,8 +23,8 @@ public class StructureServiceImpl implements StructureService {
     }
 
     @Override
-    public List<Structure> findAllStructures(Sort sort) {
-        return structutureRepository.findAll(Sort.by(Sort.Direction.ASC));
+    public List<Structure> findAllStructures() {
+        return structutureRepository.findAll();
     }
 
     @Override

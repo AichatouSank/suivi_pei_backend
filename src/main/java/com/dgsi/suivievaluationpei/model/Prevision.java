@@ -15,13 +15,13 @@ public class Prevision {
     private Long id;
     private int anneeBudgetaire;
     private int quantite;
-    private double prixTotal;
+    private double coutTotal;
     @ManyToOne
     @JoinColumn(name = "structure_id",   insertable = false,
             updatable = false)
 
     private Structure structure;
     @ManyToOne
-    @JoinColumn(name = "equipement_id")
+    @JoinColumn(name = "equipement_id", referencedColumnName = "equipementId")
     private EquipementInformatique equipementInformatique;
 }

@@ -42,4 +42,5 @@ public class Acquisition {
     @ManyToOne
     @JoinColumn(name = "mode_acquisition_id", referencedColumnName = "id")
     private ModeAcquisition modeAcquisition;
+
 }

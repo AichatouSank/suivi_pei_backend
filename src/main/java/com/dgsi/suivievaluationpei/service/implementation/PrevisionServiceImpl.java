@@ -1,6 +1,8 @@
 package com.dgsi.suivievaluationpei.service.implementation;
 
+import com.dgsi.suivievaluationpei.model.EquipementInformatique;
 import com.dgsi.suivievaluationpei.model.Prevision;
+import com.dgsi.suivievaluationpei.repository.EquipementInformatiqueRepository;
 import com.dgsi.suivievaluationpei.repository.PrevisionRepository;
 import com.dgsi.suivievaluationpei.service.PrevisionService;
 import lombok.AllArgsConstructor;
@@ -14,8 +16,14 @@ import java.util.Optional;
 @Service
 public class PrevisionServiceImpl implements PrevisionService {
     private final PrevisionRepository previsionRepository;
+    private final EquipementInformatiqueRepository equipementInformatiqueRepository;
     @Override
     public Prevision addPrevision(Prevision prevision) {
+        EquipementInformatique equipementInformatique = prevision.getEquipementInformatique();
+        double cout = equipementInformatiqueRepository.findByCout(equipementInformatique);
+        int quantite = prevision.getQuantite();
+        double coutTotal = quantite * cout;
+        prevision.setCoutTotal(coutTotal);
         return previsionRepository.save(prevision);
     }
 

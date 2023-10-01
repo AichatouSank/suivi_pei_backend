@@ -7,4 +7,5 @@ import org.springframework.data.repository.NoRepositoryBean;
 
 //@NoRepositoryBean
 public interface EquipementInformatiqueRepository extends JpaRepository<EquipementInformatique, Long> {
+    double findByCout(EquipementInformatique equipementInformatique);
 }

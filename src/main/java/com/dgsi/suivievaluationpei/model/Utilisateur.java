@@ -32,22 +32,20 @@ public class Utilisateur {
             generator = "utislisateur_generator"
     )
     private Long utilisateurId;
+    @Column(nullable = false, length = 50)
     private String nom;
+    @Column(nullable = false, length = 50)
     private String prenom;
     private String nomUtilisateur;
     @Column(unique = true, nullable = false)
     private String email;
+    @Column(nullable = false, length = 25)
     private String password;
     @OneToOne
     @JoinColumn(name = "structure_id", referencedColumnName = "structure_id")
     private Structure structure;
     @ManyToOne
-    @JoinTable(
-            name = "utilisateur_role",
-            joinColumns = @JoinColumn(name = "role_id"),
-            inverseJoinColumns = @JoinColumn(name = "utilisateur_id")
-
-    )
+    @JoinColumn(name= "role_id", referencedColumnName = "roleId")
     private Role role;
 
 

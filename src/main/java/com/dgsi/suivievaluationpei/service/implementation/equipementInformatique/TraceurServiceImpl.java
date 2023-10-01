@@ -1,11 +1,13 @@
 package com.dgsi.suivievaluationpei.service.implementation.equipementInformatique;
 
-import com.dgsi.suivievaluationpei.model.EquipementInformatique;
 import com.dgsi.suivievaluationpei.model.typeEquipement.Traceur;
-import com.dgsi.suivievaluationpei.service.equipementInformatique.TraceurService;
+import com.dgsi.suivievaluationpei.repository.typeEquipement.TraceurRepository;
+import com.dgsi.suivievaluationpei.service.typeEquipementInformatique.TraceurService;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -13,23 +15,30 @@ import java.util.List;
 @Data
 @Service
 public class TraceurServiceImpl implements TraceurService {
+    private final TraceurRepository traceurRepository;
     @Override
-    public Traceur addTraceur(Traceur cleUSB) {
-        return null;
+    public Traceur addTraceur(Traceur traceur) {
+        return traceurRepository.save(traceur);
     }
 
     @Override
-    public List<EquipementInformatique> getAllTraceur() {
-        return null;
+    public List<Traceur> getAllTraceur() {
+        return traceurRepository.findAll();
     }
 
     @Override
-    public Traceur updateTraceur(Traceur cleUSB) {
-        return null;
+    public Traceur updateTraceur(Long id, Traceur traceur) {
+        traceurRepository.findById(id)
+                .orElseThrow(() ->new ResponseStatusException(HttpStatus.NOT_FOUND, "id : "+ id +" invalid"));
+        traceur.setEquipementId(id);
+        return traceurRepository.save(traceur);
     }
 
     @Override
-    public String deleteTraceur(Long id) {
-        return null;
+    public boolean deleteTraceur(Long id) {
+        Traceur traceur = traceurRepository.findById(id)
+                .orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND, "id : "+ id + " invalide"));
+         traceurRepository.delete(traceur);
+         return true;
     }
 }

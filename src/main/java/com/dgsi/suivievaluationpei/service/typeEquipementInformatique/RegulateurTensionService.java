@@ -1,7 +1,5 @@
-package com.dgsi.suivievaluationpei.service.equipementInformatique;
+package com.dgsi.suivievaluationpei.service.typeEquipementInformatique;
 
-import com.dgsi.suivievaluationpei.model.EquipementInformatique;
-import com.dgsi.suivievaluationpei.model.typeEquipement.CleUSB;
 import com.dgsi.suivievaluationpei.model.typeEquipement.RegulateurTension;
 
 import java.util.List;
@@ -9,6 +7,8 @@ import java.util.List;
 public interface RegulateurTensionService {
     RegulateurTension addRegulateurTension(RegulateurTension regulateurTension);
     List<RegulateurTension> getAllRegulateurTension();
-    RegulateurTension updateRegulateurTension(RegulateurTension regulateurTension);
+
+    RegulateurTension updateRegulateurTension(Long id, RegulateurTension regulateurTension);
+
     boolean deleteRegulateurTension(Long id);
 }

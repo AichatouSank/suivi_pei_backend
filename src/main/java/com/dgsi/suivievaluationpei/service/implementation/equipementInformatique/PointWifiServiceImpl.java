@@ -1,35 +1,43 @@
 package com.dgsi.suivievaluationpei.service.implementation.equipementInformatique;
 
-import com.dgsi.suivievaluationpei.model.EquipementInformatique;
 import com.dgsi.suivievaluationpei.model.typeEquipement.PointWifi;
-import com.dgsi.suivievaluationpei.service.equipementInformatique.PointWifiService;
+import com.dgsi.suivievaluationpei.repository.typeEquipement.PointWifiRepository;
+import com.dgsi.suivievaluationpei.service.typeEquipementInformatique.PointWifiService;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
 @AllArgsConstructor
-@Data
 @Service
 public class PointWifiServiceImpl implements PointWifiService {
+    private final PointWifiRepository pointWifiRepository;
     @Override
     public PointWifi addPointWifi(PointWifi pointWifi) {
-        return null;
+        return pointWifiRepository.save(pointWifi);
     }
 
     @Override
-    public List<EquipementInformatique> getAllPointWifi() {
-        return null;
+    public List<PointWifi> getAllPointWifi() {
+        return pointWifiRepository.findAll();
     }
 
     @Override
-    public PointWifi updatePointWifi(PointWifi pointWifi) {
-        return null;
+    public PointWifi updatePointWifi(Long id, PointWifi pointWifi) {
+        pointWifiRepository.findById(id)
+                .orElseThrow(()->new ResponseStatusException(HttpStatus.NOT_FOUND, "id : " + id +" invalide"));
+        pointWifi.setEquipementId(id);
+        return pointWifiRepository.save(pointWifi);
     }
 
     @Override
-    public String deletePointWifi(Long id) {
-        return null;
+    public boolean deletePointWifi(Long id) {
+       PointWifi pointWifi= pointWifiRepository
+                .findById(id)
+                .orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND, "id : " + id +" invalide"));
+        pointWifiRepository.delete(pointWifi);
+        return true;
     }
 }

@@ -11,10 +11,13 @@ import java.util.Optional;
 public interface AcquisitionService {
     Acquisition addAcquisition(Acquisition acquisition);
     List<Acquisition> getAllAcquisition();
+    List<Acquisition> getAllBySortAcquisition(String field);
 
-    Acquisition updateAcquisition(Acquisition acquisition);
+    Acquisition updateAcquisition(Long id, Acquisition acquisition);
     String deleteAcquisitionById(Long id);
-    Optional<Acquisition> findByDateAacquisiyion(LocalDate date);
+    Optional<Acquisition> findByDateAcquisition(LocalDateTime date);
     Optional<Acquisition> findByModeAcquiqition(ModeAcquisition mode);
-    Optional<Acquisition>findByDateAndMode(ModeAcquisition mode, LocalDateTime date);
+    Optional<Acquisition>findByDateAndMode(LocalDateTime date, ModeAcquisition mode);
+    double coutTotal();
+    Long countAllAcquisition();
 }

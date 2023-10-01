@@ -1,11 +1,13 @@
 package com.dgsi.suivievaluationpei.service.implementation.equipementInformatique;
 
-import com.dgsi.suivievaluationpei.model.EquipementInformatique;
 import com.dgsi.suivievaluationpei.model.typeEquipement.PareFeu;
-import com.dgsi.suivievaluationpei.service.equipementInformatique.PareFeuService;
+import com.dgsi.suivievaluationpei.repository.typeEquipement.PareFeuRepository;
+import com.dgsi.suivievaluationpei.service.typeEquipementInformatique.PareFeuService;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -13,23 +15,30 @@ import java.util.List;
 @Data
 @Service
 public class PareFeuServiceImpl implements PareFeuService {
+    private final PareFeuRepository pareFeuRepository;
     @Override
     public PareFeu addPareFeu(PareFeu pareFeu) {
-        return null;
+        return pareFeuRepository.save(pareFeu);
     }
 
     @Override
-    public List<EquipementInformatique> getAllPareFeu() {
-        return null;
+    public List<PareFeu> getAllPareFeu() {
+        return pareFeuRepository.findAll();
     }
 
     @Override
-    public PareFeu updatePareFeu(PareFeu pareFeu) {
-        return null;
+    public PareFeu updatePareFeu(Long id, PareFeu pareFeu) {
+        pareFeuRepository.findById(id)
+                .orElseThrow(() ->new ResponseStatusException(HttpStatus.NOT_FOUND, "id : "+ id +" invalid"));
+        pareFeu.setEquipementId(id);
+        return pareFeuRepository.save(pareFeu);
     }
 
     @Override
-    public String deletePareFeu(Long id) {
-        return null;
+    public boolean deletePareFeu(Long id) {
+        PareFeu pareFeu = pareFeuRepository.findById(id)
+                .orElseThrow(() ->new ResponseStatusException(HttpStatus.NOT_FOUND, "id : "+ id +" invalid"));
+        pareFeuRepository.delete(pareFeu);
+        return true;
     }
 }

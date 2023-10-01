@@ -1,7 +1,5 @@
-package com.dgsi.suivievaluationpei.service.equipementInformatique;
+package com.dgsi.suivievaluationpei.service.typeEquipementInformatique;
 
-import com.dgsi.suivievaluationpei.model.EquipementInformatique;
-import com.dgsi.suivievaluationpei.model.typeEquipement.CleUSB;
 import com.dgsi.suivievaluationpei.model.typeEquipement.Onduleur;
 
 import java.util.List;
@@ -9,6 +7,6 @@ import java.util.List;
 public interface OnduleurService {
     Onduleur addOnduleur(Onduleur onduleur);
     List<Onduleur> getAllOnduleur();
-    Onduleur updateOnduleur(Onduleur onduleur);
+    Onduleur updateOnduleur(Long id, Onduleur onduleur);
     boolean deleteOnduleur(Long id);
 }

@@ -1,35 +1,42 @@
 package com.dgsi.suivievaluationpei.service.implementation.equipementInformatique;
 
-import com.dgsi.suivievaluationpei.model.EquipementInformatique;
 import com.dgsi.suivievaluationpei.model.typeEquipement.Tablette;
-import com.dgsi.suivievaluationpei.service.equipementInformatique.TabletteService;
+import com.dgsi.suivievaluationpei.repository.typeEquipement.TabletteRepository;
+import com.dgsi.suivievaluationpei.service.typeEquipementInformatique.TabletteService;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
 @AllArgsConstructor
-@Data
 @Service
 public class TabletteServiceImpl implements TabletteService {
+    private final TabletteRepository tabletteRepository;
     @Override
     public Tablette addTablette(Tablette tablette) {
-        return null;
+        return tabletteRepository.save(tablette);
     }
 
     @Override
-    public List<EquipementInformatique> getAllTablette() {
-        return null;
+    public List<Tablette> getAllTablette() {
+        return tabletteRepository.findAll();
     }
 
     @Override
-    public Tablette updateTablette(Tablette tablette) {
-        return null;
+    public Tablette updateTablette(Long id, Tablette tablette) {
+        tabletteRepository.findById(id)
+                .orElseThrow(() ->new ResponseStatusException(HttpStatus.NOT_FOUND, "id : "+ id +" invalid"));
+        tablette.setEquipementId(id);
+        return tabletteRepository.save(tablette);
     }
 
     @Override
-    public String deleteTablette(Long id) {
-        return null;
+    public boolean deleteTablette(Long id) {
+        Tablette tablette = tabletteRepository.findById(id)
+                .orElseThrow(() ->new ResponseStatusException(HttpStatus.NOT_FOUND, "id : "+ id +" invalid"));
+    tabletteRepository.delete(tablette);
+        return true;
     }
 }

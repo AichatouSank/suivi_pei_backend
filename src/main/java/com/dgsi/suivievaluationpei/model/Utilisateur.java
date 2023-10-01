@@ -41,8 +41,13 @@ public class Utilisateur {
     @OneToOne
     @JoinColumn(name = "structure_id", referencedColumnName = "structure_id")
     private Structure structure;
-    @OneToOne
-    @JoinColumn(name = "role_id",  referencedColumnName = "roleId")
+    @ManyToOne
+    @JoinTable(
+            name = "utilisateur_role",
+            joinColumns = @JoinColumn(name = "role_id"),
+            inverseJoinColumns = @JoinColumn(name = "utilisateur_id")
+
+    )
     private Role role;
 
 

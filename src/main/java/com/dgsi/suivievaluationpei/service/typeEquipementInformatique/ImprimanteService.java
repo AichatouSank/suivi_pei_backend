@@ -1,7 +1,5 @@
-package com.dgsi.suivievaluationpei.service.equipementInformatique;
+package com.dgsi.suivievaluationpei.service.typeEquipementInformatique;
 
-import com.dgsi.suivievaluationpei.model.EquipementInformatique;
-import com.dgsi.suivievaluationpei.model.typeEquipement.CleUSB;
 import com.dgsi.suivievaluationpei.model.typeEquipement.Imprimante;
 
 import java.util.List;
@@ -9,6 +7,6 @@ import java.util.List;
 public interface ImprimanteService {
     Imprimante addImprimante(Imprimante imprimante);
     List<Imprimante> getAllImprimante();
-    Imprimante updateImprimante(Imprimante imprimante);
+    Imprimante updateImprimante(Long id, Imprimante imprimante);
     boolean deleteImprimante(Long id);
 }

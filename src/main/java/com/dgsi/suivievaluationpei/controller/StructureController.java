@@ -6,6 +6,7 @@ import com.dgsi.suivievaluationpei.service.StructureService;
 import com.dgsi.suivievaluationpei.service.implementation.StructureServiceImpl;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -37,11 +38,11 @@ public class StructureController {
         );
     }
     @GetMapping
-    public ResponseEntity<CustomResponse> getAllStructures(){
+    public ResponseEntity<CustomResponse> getAllStructures(Sort sort){
       return ResponseEntity.ok(
                 CustomResponse.builder()
                         .timeStamp(LocalDateTime.now())
-                        .data(Map.of("structures: ",  structureService.findAllStructures()))
+                        .data(Map.of("structures: ",  structureService.findAllStructures(sort)))
                         .message("Liste de toutes les structures")
                         .status(OK)
                         .statusCode(OK.value())

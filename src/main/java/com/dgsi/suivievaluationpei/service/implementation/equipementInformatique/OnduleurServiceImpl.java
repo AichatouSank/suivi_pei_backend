@@ -1,11 +1,13 @@
 package com.dgsi.suivievaluationpei.service.implementation.equipementInformatique;
 
-import com.dgsi.suivievaluationpei.model.EquipementInformatique;
 import com.dgsi.suivievaluationpei.model.typeEquipement.Onduleur;
-import com.dgsi.suivievaluationpei.service.equipementInformatique.OnduleurService;
+import com.dgsi.suivievaluationpei.repository.typeEquipement.OnduleurRepository;
+import com.dgsi.suivievaluationpei.service.typeEquipementInformatique.OnduleurService;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -13,23 +15,30 @@ import java.util.List;
 @Data
 @Service
 public class OnduleurServiceImpl implements OnduleurService {
+    private final OnduleurRepository onduleurRepository;
     @Override
     public Onduleur addOnduleur(Onduleur onduleur) {
-        return null;
+        return onduleurRepository.save(onduleur);
     }
 
     @Override
-    public List<EquipementInformatique> getAllOnduleur() {
-        return null;
+    public List<Onduleur> getAllOnduleur() {
+        return onduleurRepository.findAll();
     }
 
     @Override
-    public Onduleur updateOnduleur(Onduleur onduleur) {
-        return null;
+    public Onduleur updateOnduleur(Long id, Onduleur onduleur) {
+        onduleurRepository.findById(id)
+                .orElseThrow(() ->new ResponseStatusException(HttpStatus.NOT_FOUND, "id : "+ id +" invalid"));
+        onduleur.setEquipementId(id);
+        return onduleurRepository.save(onduleur);
     }
 
     @Override
-    public String deleteOnduleur(Long id) {
-        return null;
+    public boolean deleteOnduleur(Long id) {
+        Onduleur onduleur = onduleurRepository.findById(id)
+                .orElseThrow(() ->new ResponseStatusException(HttpStatus.NOT_FOUND, "id : "+ id +" invalid"));
+        onduleurRepository.delete(onduleur);
+        return true;
     }
 }

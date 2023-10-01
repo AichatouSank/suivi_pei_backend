@@ -6,6 +6,7 @@ import com.dgsi.suivievaluationpei.repository.StructutureRepository;
 import com.dgsi.suivievaluationpei.service.StructureService;
 import com.sun.jdi.event.StepEvent;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,8 +23,8 @@ public class StructureServiceImpl implements StructureService {
     }
 
     @Override
-    public List<Structure> findAllStructures() {
-        return structutureRepository.findAll();
+    public List<Structure> findAllStructures(Sort sort) {
+        return structutureRepository.findAll(Sort.by(Sort.Direction.ASC));
     }
 
     @Override

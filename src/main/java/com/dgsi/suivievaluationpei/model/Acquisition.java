@@ -39,7 +39,7 @@ public class Acquisition {
     @ManyToOne
     @JoinColumn(name = "equipement_id", referencedColumnName = "equipementId")
     private EquipementInformatique equipementInformatique;
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "mode_acquisition_id", referencedColumnName = "id")
     private ModeAcquisition modeAcquisition;
 }
